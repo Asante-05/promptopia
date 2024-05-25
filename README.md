@@ -34,3 +34,24 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+[] Implement Search
+    -by prompt
+    -by username
+    -by tag
+[] Implement Click on tag
+[] Implement view other profiles
+
+ for 1 & 2
+ should be implemented in the Feed.jsx
+ add searchStates, searchtimeout, searchresults
+ filter prompts based on those queries
+ handlesearchange
+ handletagClick
+
+
+ for 3
+ create new folder in the profile directory with dynamic id and then the page file inside
+ 
