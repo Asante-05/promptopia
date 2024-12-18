@@ -20,10 +20,10 @@ jobs:
           git config user.name "Asante-05"
           git config user.email "kelvinowusu523@gmail.com"
 
-      - name: Reset Deployment Branch to Main
+      - name: Reset Deployment Branch to Master
         run: |
           git fetch origin
           git checkout vercel-deployment || git checkout -b vercel-deployment
-          git reset --hard main
+          git reset --hard master
           git commit --allow-empty -m "deploy to vercel"
           git push -f origin vercel-deployment
