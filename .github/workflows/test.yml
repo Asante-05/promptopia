@@ -3,7 +3,7 @@ name: Copy Commits to Deployment Branch
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   copy_commits:
