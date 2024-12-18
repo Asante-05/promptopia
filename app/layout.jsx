@@ -1,28 +1,31 @@
-import '@styles/globals.css'
-import Nav from '@components/Nav'
-import Provider from '@components/Provider'
+import "@styles/globals.css";
+import Nav from "@components/Nav";
+import Provider from "@components/Provider";
+import { MyThemeContextProvider } from "../contexts/theme.jsx";
 
 export const metadata = {
-    title: "Promptopia",
-    description: 'Discover & Share AI prompts'
-}
+  title: "Promptopia",
+  description: "Discover & Share AI prompts",
+};
 
-function RootLayout({children}) {
+function RootLayout({ children }) {
   return (
-    <html lang='en'>
-        <body>
-            <Provider>
+    <html lang="en">
+      <body>
+        <Provider>
+          <MyThemeContextProvider>
             <div className="main">
-                <div className="gradient"/>
+              <div className="gradient" />
             </div>
-            <main className='app'>
-                <Nav/>
-                {children}
+            <main className="app">
+              <Nav />
+              {children}
             </main>
-            </Provider>
-        </body>
+          </MyThemeContextProvider>
+        </Provider>
+      </body>
     </html>
-  )
+  );
 }
 
-export default RootLayout
+export default RootLayout;
