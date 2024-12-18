@@ -1,0 +1,29 @@
+name: Copy Commits to Deployment Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  copy_commits:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set Up Git
+        run: |
+          git config user.name "Asante-05"
+          git config user.email "kelvinowusu523@gmail.com"
+
+      - name: Reset Deployment Branch to Main
+        run: |
+          git fetch origin
+          git checkout vercel-deployment || git checkout -b vercel-deployment
+          git reset --hard main
+          git commit --allow-empty -m "deploy to vercel"
+          git push -f origin vercel-deployment
